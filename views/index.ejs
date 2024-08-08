@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Form Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header class="bg-primary text-white p-3 mb-4">
+        <div class="container">
+            <h1>My Application</h1>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="/" onclick="handleNavigation(event, 'index')">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main-content" class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="form-container">
+                    <h2>Contact Us</h2>
+                    <form action="/submit-contact" method="POST" onsubmit="return validateContactForm()">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone (optional):</label>
+                            <input type="text" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                            <div id="password-strength" class="password-weak"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <!-- Feedback Form -->
+                <div class="form-container">
+                    <h2>Feedback</h2>
+                    <form action="/submit-feedback" method="POST" onsubmit="return validateFeedbackForm()">
+                        <div class="form-group">
+                            <label for="feedback">Your Feedback:</label>
+                            <textarea id="feedback" name="feedback" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <div class="container">
+            <p>&copy; 2024 My Application. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
